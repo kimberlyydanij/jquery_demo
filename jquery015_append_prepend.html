@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery015_append_prepend</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script>    
+        $(document).ready(function () {
+            //append, appendTo: 뒤에추가, prepend, prependTo : 앞에 추가
+
+            //$('부모요소').append('추가할 자식 요소')
+            $("#my").append('<li>append</li>');
+
+            //$('부모요소').prepend('추가할 자식 요소')
+            $("#my").prepend('<li>prepend</li>');
+
+            //3
+            console.log($('#my').children().length);
+
+            //$('추가할 자식요소').prependdTo('부모요소')
+            $('<li>prependTo</li>').prependTo($("#my"));
+            //$('추가할 자식요소').appendTo('부모요소')
+            $('<li>appendTo</li>').appendTo($("#my"));
+
+            //5
+            console.log($('#my').children().length);
+        })
+    </script>
+</head>
+<body>
+    <button>append</button>
+    <ul id='my'>
+        <li>first</li>
+    </ul>
+</body>
+</html>
